@@ -145,6 +145,7 @@ including title, author, version number, date, and source or location.$>$
 \section{Product Perspective}
 
 
+
 $<$Describe the context and origin of the product being specified in this SRS.  
 For example, state whether this product is a follow-on member of a product 
 family, a replacement for certain existing systems, or a new, self-contained 
@@ -239,7 +240,7 @@ API Reference
 Setup Guide
 \\
 Basic examples
-%todo expand on each of these maybe add more
+todo: expand on each of these maybe add more
 
 %$<$List the user documentation components (such as user manuals, on-line help, 
 %and tutorials) that will be delivered along with the software. Identify any 
@@ -336,7 +337,47 @@ most logical sense for your product.$>$
 %REQ-1:	REQ-2:
 
 %\section{System Feature 2 (and so on)}
-\
+\section{Engine Module}
+\subsection{Description and Priority}
+This feature proves the core game loop and state functionality it is an essential feature and is high priority.  The timing component we allow users to manage the main loop speed. and when it calls the current states update and render functions.  These can be different so games can run at a constant physics rate and scale that as necessary but only render when needed or at a fixed frame rate.  It will have game states that can be switched between from events within the update function.  This is meant to be extended by the users game and the update and render functions overridden with games specific code.
+
+\subsection{Stimulus/Response Sequences}
+\begin{itemize}
+\item Stimulus:		Time adjusted\\
+	Response: 		Internal time variables set so the new timing take effect the next tick\\
+	
+\item Stimulus:		State changed\\
+	Response: 		the corresponding states update and draw function well be used on the next tick.\\
+	
+\item Stimulus:		New Tick\\
+	Response: 		Current states update function is called and if it is time to draw a frame the render function is also called \\
+	
+\item Stimulus:		Camera Set\\
+	Response: 		Current states Camera is set and the cameras transformation from world coordinates to Camera coordinates is applied while rendering \\
+	
+\item Stimulus:		\\
+	Response: 		\\
+
+\end{itemize}
+
+
+	
+
+\subsection{Functional Requirements}
+
+\begin{description}
+\item [{REC-ET1:}]~Tick rate and Frame rate must be controlled independently
+\item [{REC-ET2:}]~When calling Update in a tick the Tick time must be sent as a parameter
+\item [{REC-ET3:}]~If ticks cannot be computed in time render frames may be dropped.
+\item [{REC-ES1:}]~The update and render function should be called for all active states.
+\item [{REC-ES2:}]~States should be able toggle states from within the update function.
+\item [{REC-ES3:}]~States Should have an Identifier, Update function, and Draw function
+\item [{REC-ES4:}]~States should accept a camera transformation which applies to the render function.
+\item [{REC-ES5:}]~States should be able to be given indexes for rendering order.  This should default to the order they were added
+
+\end{description}
+
+
 \section{Physics Module}
 %$<$Don’t really say “System Feature 1.” State the feature name in just a few 
 %words.$>$
@@ -349,30 +390,32 @@ The Physics Module will be a high priority. This will have three components the 
 %relative scale from a low of 1 to a high of 9).$>$
 
 \subsection{Stimulus/Response Sequences}
-Stimulus:		New Body Created\\
+\begin{itemize}
+
+\item Stimulus:		New Body Created\\
 Response: 		Body Initialized with provided parameters and is returned to user for use\\
 
-Stimulus:		New Manager Created \\
+\item Stimulus:		New Manager Created \\
 Response: 		Physics Manager  Initialized with universal constants provided and environment for bodies is setup\\
 
-Stimulus:		Body Added to manager\\
+\item Stimulus:		Body Added to manager\\
 Response: 		Body is added to the manager and will be updated and rendered all world relationships will be applied to it\\
 
-Stimulus:		Relationship Added to manager\\
+\item Stimulus:		Relationship Added to manager\\
 Response: 		Bodies referenced by the relationship will have it applied to them\\
 
-Stimulus:		Collision Detected between Bodies\\
+\item Stimulus:		Collision Detected between Bodies\\
 Response: 		Bodies are separated and appropriate forces are applied.\\
 
-Stimulus:		Body Updated delta time\\
+\item Stimulus:		Body Updated delta time\\
 Response: 		All applied relationships are computed and bodies parameters are updated\\
 
-Stimulus:		Body Rendered\\
+\item Stimulus:		Body Rendered\\
 Response: 		Body is drawn to screen at corresponding position\\
 
-Stimulus:		Body Deleted\\
+\item Stimulus:		Body Deleted\\
 Response: 		All relationships are removed and corresponding managers and bodies are notified then body is deleted.\\
-
+\end{itemize}
 %$<$List the sequences of user actions and system responses that stimulate the 
 %behavior defined for this feature. These will correspond to the dialog elements 
 %associated with use cases.$>$
