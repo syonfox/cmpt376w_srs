@@ -157,6 +157,7 @@ interfaces can be helpful.$>$
 \section{Product Functions}
 
 Engine
+
 	Timing - Setups at maintian a core game loop
 		Allows users to use real dt or fix it so each tick is a consistent time.
 		Allows users to set tickrate and framerate independently
@@ -177,8 +178,8 @@ Engine
 %	Camera (Optional) - Incorporates Camera Module and camera control function into engine
 %		ie setting camera to fallow a Body in the engine.
 	
-Physics
-Camera
+Physics Module - This will provide Management and Physics functions that apply to bodys.
+Camera - This will provide cameras that can be applied to A game state. or accessed as a transformation.
 UI - Adds the ability to make and control UI's 
 Util - extra utility functions that extend GL or offer useful functions
 	Extend Math for GL's vectors.
@@ -268,6 +269,7 @@ the user interface design should be documented in a separate user interface
 specification.$>$
 
 \section{Hardware Interfaces}
+joysticks?
 $<$Describe the logical and physical characteristics of each interface between 
 the software product and the hardware components of the system. This may include 
 the supported device types, the nature of the data and control interactions 
@@ -275,6 +277,7 @@ between the software and the hardware, and communication protocols to be
 used.$>$
 
 \section{Software Interfaces}
+Grapics Library
 $<$Describe the connections between this product and other specific software 
 components (name and version), including databases, operating systems, tools, 
 libraries, and integrated commercial components. Identify the data items or 
@@ -287,6 +290,7 @@ global data area in a multitasking operating system), specify this as an
 implementation constraint.$>$
 
 \section{Communications Interfaces}
+Networking multiplayer
 $<$Describe the requirements associated with any communications functions 
 required by this product, including e-mail, web browser, network server 
 communications protocols, electronic forms, and so on. Define any pertinent 
@@ -302,41 +306,122 @@ prefer to organize this section by use case, mode of operation, user class,
 object class, functional hierarchy, or combinations of these, whatever makes the 
 most logical sense for your product.$>$
 
-\section{System Feature 1}
-$<$Don’t really say “System Feature 1.” State the feature name in just a few 
-words.$>$
+%\section{System Feature 1}
+%$<$Don’t really say “System Feature 1.” State the feature name in just a few 
+%words.$>$
+
+%\subsection{Description and Priority}
+%$<$Provide a short description of the feature and indicate whether it is of 
+%High, Medium, or Low priority. You could also include specific priority 
+%component ratings, such as benefit, penalty, cost, and risk (each rated on a 
+%relative scale from a low of 1 to a high of 9).$>$
+%
+%\subsection{Stimulus/Response Sequences}
+%$<$List the sequences of user actions and system responses that stimulate the 
+%behavior defined for this feature. These will correspond to the dialog elements 
+%associated with use cases.$>$
+
+%\subsection{Functional Requirements}
+%$<$Itemize the detailed functional requirements associated with this feature.  
+%These are the software capabilities that must be present in order for the user 
+%to carry out the services provided by the feature, or to execute the use case.  
+%Include how the product should respond to anticipated error conditions or 
+%invalid inputs. Requirements should be concise, complete, unambiguous, 
+%verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary 
+%information is not yet available.$>$
+
+%$<$Each requirement should be uniquely identified with a sequence number or a 
+%meaningful tag of some kind.$>$
+
+%REQ-1:	REQ-2:
+
+%\section{System Feature 2 (and so on)}
+\
+\section{Physics Module}
+%$<$Don’t really say “System Feature 1.” State the feature name in just a few 
+%words.$>$
 
 \subsection{Description and Priority}
-$<$Provide a short description of the feature and indicate whether it is of 
-High, Medium, or Low priority. You could also include specific priority 
-component ratings, such as benefit, penalty, cost, and risk (each rated on a 
-relative scale from a low of 1 to a high of 9).$>$
+The Physics Module will be a high priority. This will have three components the \textit{Physics Manager} which can be used to hold \textit{Physics Bodies} and manage the relationships between them as well as the \textit{Physics Functions} which will provided many useful physics calculations and can be used on bodies independently or be used by the physics manager to update the bodies it manages..
+%$<$Provide a short description of the feature and indicate whether it is of 
+%High, Medium, or Low priority. You could also include specific priority 
+%component ratings, such as benefit, penalty, cost, and risk (each rated on a 
+%relative scale from a low of 1 to a high of 9).$>$
 
 \subsection{Stimulus/Response Sequences}
-$<$List the sequences of user actions and system responses that stimulate the 
-behavior defined for this feature. These will correspond to the dialog elements 
-associated with use cases.$>$
+Stimulus:		New Body Created\\
+Response: 		Body Initialized with provided parameters and is returned to user for use\\
+
+Stimulus:		New Manager Created \\
+Response: 		Physics Manager  Initialized with universal constants provided and environment for bodies is setup\\
+
+Stimulus:		Body Added to manager\\
+Response: 		Body is added to the manager and will be updated and rendered all world relationships will be applied to it\\
+
+Stimulus:		Relationship Added to manager\\
+Response: 		Bodies referenced by the relationship will have it applied to them\\
+
+Stimulus:		Collision Detected between Bodies\\
+Response: 		Bodies are separated and appropriate forces are applied.\\
+
+Stimulus:		Body Updated delta time\\
+Response: 		All applied relationships are computed and bodies parameters are updated\\
+
+Stimulus:		Body Rendered\\
+Response: 		Body is drawn to screen at corresponding position\\
+
+Stimulus:		Body Deleted\\
+Response: 		All relationships are removed and corresponding managers and bodies are notified then body is deleted.\\
+
+%$<$List the sequences of user actions and system responses that stimulate the 
+%behavior defined for this feature. These will correspond to the dialog elements 
+%associated with use cases.$>$
 
 \subsection{Functional Requirements}
-$<$Itemize the detailed functional requirements associated with this feature.  
-These are the software capabilities that must be present in order for the user 
-to carry out the services provided by the feature, or to execute the use case.  
-Include how the product should respond to anticipated error conditions or 
-invalid inputs. Requirements should be concise, complete, unambiguous, 
-verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary 
-information is not yet available.$>$
+%$<$Itemize the detailed functional requirements associated with this feature.  
+%These are the software capabilities that must be present in order for the user 
+%to carry out the services provided by the feature, or to execute the use case.  
+%Include how the product should respond to anticipated error conditions or 
+%invalid inputs. Requirements should be concise, complete, unambiguous, 
+%verifiable, and necessary. Use “TBD” as a placeholder to indicate when necessary 
+%information is not yet available.$>$
 
-$<$Each requirement should be uniquely identified with a sequence number or a 
-meaningful tag of some kind.$>$
+%$<$Each requirement should be uniquely identified with a sequence number or a 
+%meaningful tag of some kind.$>$
 
-REQ-1:	REQ-2:
 
-\section{System Feature 2 (and so on)}
+\begin{description}
+\item [{REC-PB1:}]~The Physics Body class should store all physical properties required by the Functions this includes: Shape, Position, Velocity, Acceleration, Rotation,Rotational Velocity, Friction, Elasticity, Shape
+\item [{REC-PB2:}]~The Physics Body class should have an \textit{Update} function which updates the bodies property according to classical mechanics when called,  this function will take in a delta time parameter 
+\item [{REC-PB3:}]~The Physics Body class should have an \textit{Render} function which Draws the bodies shape.  This should be designed to be overridden by users.
+\item [{REC-PB4:}]~The Physics Body class should keep an list of relationships it is a part of so that is can apply them all when updated.
+
+\item [{REC-PF1:}]~The Physics Function should accept universals constants as parameters or allow global defaults be set.
+\item [{REC-PF2:}]~The Physics Function should include \textit{Collision detection} between two bodies with \textit{Minimum Translation Vectors} (MTV).  It should include fast approximate bounding box collision detection as well.
+\item [{REC-PF3:}]~The Physics Function should include \textit{collision solving} functions which will apply the necessary forces to handle a collision between two bodies.
+\item [{REC-PF4:}]~The Physics Function should include \textit{gravity} functions to apply gravity between two bodies.
+\item [{REC-PF5:}]~The Physics Function should include \textit{constant force} functions to apply constant forces to a body these could be used to create world gravity or wind forces.
+
+\item [{REC-PM1:}]~The Physics Manager should create an environment to hold Body' s as well as set world constants for the bodies it manages.
+\item [{REC-PM2:}]~The Physics Manager should allow relationships to be made between bodies which define additional iterations.  This includes forces and whether or not bodies should interact with each other.
+\item [{REC-PM3:}]~The Physics Manager should have an \textit{Update} function which applies all relations and updates all bodies
+\item [{REC-PM4:}]~The Physics Manager should have an \textit{Render} function which renders all bodies.  This should allow for bodies to be drawn in a defined order
+\item [{REC-PM5:}]~The Physics Manager should allow bodies to be grouped and relations or physics functions can be defined for the whole group or for each par of bodies in the group.
+\item [{REC-PM6:}]~The Physics Manager should allow world Relationships to be set which apply to all bodies.  These include global forces and n-body gravity as well as other optional relationships as appropriate.
+\item [{REC-PM7:}]~The Physics Manager should allow preform collision detection between select objects  this should be efficiently implemented so that full collision detection is only used when necessary not at all times.
+\end{description}
+
+
+
 
 
 \chapter{Other Nonfunctional Requirements}
 
 \section{Performance Requirements}
+
+Physics management must fast and able to support thousands of objects.
+
+
 $<$If there are performance requirements for the product under various 
 circumstances, state them here and explain their rationale, to help the 
 developers understand the intent and make suitable design choices. Specify the 
