@@ -455,7 +455,26 @@ Response: 		All relationships are removed and corresponding managers and bodies 
 \end{description}
 
 
+\section{User Interface Module}
+\subsection{Description and Priority}
+The User Interface module provides the developer with functionalities that augment the graphics module of their game engine. It is meant to be built on top of the Physics Module as it is a visual interpretation of the constraints implemented there. Its priority level is low since it is not required for the game to run and its purpose is to enable the players to interact with the game.
+\subsection{Stimulus/Response Sequences}
+\begin{itemize}
 
+\item Stimulus:		New Humanoid Shape Created\\
+Response: 		Humanoid shape is initialized with its parameters and is returned to user for use.\\
+
+\item Stimulus 		Humanoid Shape linked to Body\\
+Response:	           Humanoid shape is added to an already instantiated body from the Physics Module. Its behavior handling is passed to the Body's manager.\\
+
+\item Stimulus:		New Background Created\\
+Response: 		Background is initialized with its parameters and is returned to user for use.\\
+
+\item Stimulus:		Background linked to Physics Manager\\
+Response: 		Background is link to an instance of Physics Manager and all its property will be valid within the background.\\
+
+\end{itemize}
+\subsection{Functional Requirements}
 
 
 \chapter{Other Nonfunctional Requirements}
