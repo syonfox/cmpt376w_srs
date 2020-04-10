@@ -85,7 +85,7 @@
 \chapter{Introduction}
 
 \section{Purpose}
-This document refers to the GET software, version 1.0. GET stands for Game Engine Toolbox and it is a two-dimensional (2D) game engine designed to bridge a gap between existing \gls{gl} and large complete three-dimensional (3D) game engines.  It will extend the capabilities of \gls{gl} and provide common systems and feature needed to develop a game without forcing the user into a large complex engine. In its first iteration (version 1.0), GET is based on the C++ Simple and Fast Multimedia Library (SFML) engine. This SRS will cover the entirety of GET
+This document refers to the GET software, version 1.0. GET stands for Game Engine Toolbox and it is a two-dimensional (2D) game engine designed to bridge a gap between existing \gls{gl} and large complete three-dimensional (3D) game engines.  It will extend the capabilities of \gls{gl} and provide common systems and feature needed to develop a game without forcing the user into a large complex engine. In its first iteration (version 1.0), GET is based on the C++ SFML engine. This SRS will cover the entirety of GET
 
 %$<$Identify the product whose software requirements are specified in this 
 %document, including the revision or release number. Describe the scope of the 
@@ -286,6 +286,14 @@ It is assumed that the user's system is running of SFML version 2.2 or above. An
 \chapter{External Interface Requirements}
 
 \section{User Interfaces}
+The user interface will be the user's terminal. On succesfully running GET, a log message must include the name and the version of the software. We can distinguish between the following types of log messages:
+\begin{itemize}
+\item Information:
+\item Status:
+\item Warning:
+\item Error:
+\item Bug:
+\end{itemize}
 $<$Describe the logical characteristics of each interface between the software 
 product and the users. This may include sample screen images, any GUI standards 
 or product family style guides that are to be followed, screen layout 
@@ -572,6 +580,12 @@ that are pertinent to the project.$>$
   name=graphics library,
   description={is a library the provides a window and functions to draw to the window.  Examples of graphics libraries are SFML and SDL2}
 }
+\newglossaryentry{sfml}
+{
+  name=SFML,
+  description={Simple and Fast Multimedia Library, is a type of graphics library}
+}
+
 
 
 \renewcommand{\glossarysection}[2][]{} %removed the standard glossary title

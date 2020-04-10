@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.21)  9 APR 2020 22:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2020.1.21)  9 APR 2020 22:18
 entering extended mode
 **./srs.tex
 (srs.tex
@@ -798,100 +798,100 @@ chapter 3.
 ] [12]
 chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--374
+Underfull \hbox (badness 10000) in paragraph at lines 380--382
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 375--377
+Underfull \hbox (badness 10000) in paragraph at lines 383--385
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 378--380
+Underfull \hbox (badness 10000) in paragraph at lines 386--388
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 381--383
+Underfull \hbox (badness 10000) in paragraph at lines 389--391
 
  []
 
 [13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 418--420
+Underfull \hbox (badness 10000) in paragraph at lines 426--428
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 421--423
+Underfull \hbox (badness 10000) in paragraph at lines 429--431
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 424--426
+Underfull \hbox (badness 10000) in paragraph at lines 432--434
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 427--429
+Underfull \hbox (badness 10000) in paragraph at lines 435--437
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--432
+Underfull \hbox (badness 10000) in paragraph at lines 438--440
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--435
+Underfull \hbox (badness 10000) in paragraph at lines 441--443
 
  []
 
 [14]
-Underfull \hbox (badness 10000) in paragraph at lines 436--438
+Underfull \hbox (badness 10000) in paragraph at lines 444--446
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 439--441
+Underfull \hbox (badness 10000) in paragraph at lines 447--449
 
  []
 
 
-Overfull \hbox (7.30455pt too wide) in paragraph at lines 460--461
+Overfull \hbox (7.30455pt too wide) in paragraph at lines 468--469
 \OT1/cmr/m/n/10.95 Func-tions this in-cludes: Shape, Po-si-tion, Ve-loc-ity, Ac
 -cel-er-a-tion, Ro-ta-tion,Rotational
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 487--489
+Underfull \hbox (badness 10000) in paragraph at lines 495--497
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--492
+Underfull \hbox (badness 10000) in paragraph at lines 498--500
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 493--495
+Underfull \hbox (badness 10000) in paragraph at lines 501--503
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 496--498
+Underfull \hbox (badness 10000) in paragraph at lines 504--506
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--501
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 502--504
+Underfull \hbox (badness 10000) in paragraph at lines 510--512
 
  []
 
@@ -905,23 +905,23 @@ chapter 6.
 \openout7 = `srs.glsdefs'.
 
 (srs.gls)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 600.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 614.
  [20
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 600.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 614.
  (srs.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 600.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 600.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 614.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 614.
 Package rerunfilecheck Info: File `srs.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 600.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 614.
  ) 
 Here is how much of TeX's memory you used:
- 16862 strings out of 492484
- 300185 string characters out of 3121601
+ 16892 strings out of 492484
+ 300643 string characters out of 3121601
  561543 words of memory out of 3000000
- 20870 multiletter control sequences out of 15000+200000
+ 20900 multiletter control sequences out of 15000+200000
  9802 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,8n,72p,10121b,506s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -934,7 +934,7 @@ cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Users/l
 epti/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pf
 b><C:/Users/lepti/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
 /cm/cmti10.pfb>
-Output written on srs.pdf (20 pages, 158515 bytes).
+Output written on srs.pdf (20 pages, 158870 bytes).
 PDF statistics:
  361 PDF objects out of 1000 (max. 8388607)
  71 named destinations out of 1000 (max. 500000)
