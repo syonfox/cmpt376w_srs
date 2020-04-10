@@ -484,36 +484,60 @@ Response: 		Background is link to an instance of Physics Manager and all its pro
 
 \section{Performance Requirements}
 
-Physics management must fast and able to support thousands of objects.
 
 
-$<$If there are performance requirements for the product under various 
-circumstances, state them here and explain their rationale, to help the 
-developers understand the intent and make suitable design choices. Specify the 
-timing relationships for real time systems. Make such requirements as specific 
-as possible. You may need to state performance requirements for individual 
-functional requirements or features.$>$
+
+The size of the library should not exceed that of SFML.  This is on the order of 10 MB this limit aim to keep the loading and download times of developers games low.  Reasons to exead this may be analized on a case by case basis but if component exceed this limit they should be optional so that developers can exclude them if not needed.
+
+
+\begin{description}
+\item [{REQ-NFP1:}]~Physics management must fast and able to support thousands of objects. Ideally man collision algorithm will faster then O(n!) This would be the speed of an naive implementation and there should be speedups that we can use to improve upon this.  The target performance should be O(nlog(n)) as this would allow many more object to exist in the words but this may not be possible.
+\item [{REQ-NFP2:}]~We hope that the library reaches reasonable time and memory complexity. But in general component should be using the time and space complexities of the latest  research on whichever component is being used.  This will be found during implementation when the component is being designed.
+\item [{REQ-NFP3:}]~Should not have any memory leaks or other performance degradation over time.
+\end{description}
+
+%$<$If there are performance requirements for the product under various 
+%circumstances, state them here and explain their rationale, to help the 
+%developers understand the intent and make suitable design choices. Specify the 
+%timing relationships for real time systems. Make such requirements as specific 
+%as possible. You may need to state performance requirements for individual 
+%functional requirements or features.$>$
 
 \section{Safety Requirements}
-$<$Specify those requirements that are concerned with possible loss, damage, or 
-harm that could result from the use of the product. Define any safeguards or 
-actions that must be taken, as well as actions that must be prevented. Refer to 
-any external policies or regulations that state safety issues that affect the 
-product’s design or use. Define any safety certifications that must be 
-satisfied.$>$
+This library although aimed towards game developers should attempt to be as stable and reliable as possible if it is uses to develop mission critical applications and therefor should meat these requirements
+\begin{description}
+\item [{REQ-NFD1:}]~Be well tested for reliability and crash tolerance.  This involves maintain reliable operation for extended periods of time without degrading performance. see REC-NFP3
+\item [{REQ-NFD2:}]~The documentation should include detailed operational parameter ranges. with a guarantee of correctness for operation within them.  These allow developers to use this library in mission critical application and easily audit our code for correctness.
+
+
+\end{description}
+
+%$<$Specify those requirements that are concerned with possible loss, damage, or 
+%harm that could result from the use of the product. Define any safeguards or 
+%actions that must be taken, as well as actions that must be prevented. Refer to 
+%any external policies or regulations that state safety issues that affect the 
+%product’s design or use. Define any safety certifications that must be 
+%satisfied.$>$
 
 \section{Security Requirements}
-$<$Specify any requirements regarding security or privacy issues surrounding use 
-of the product or protection of the data used or created by the product. Define 
-any user identity authentication requirements. Refer to any external policies or 
-regulations containing security issues that affect the product. Define any 
-security or privacy certifications that must be satisfied.$>$
+Although this library dose not have networked components game hacking is a large problem these days the problem is very hard to mitigate and ultimately any solution we implement may not make a difference since the software can always be read.  These solutions would land on the shoulders of game developers to implement across their entire game.  For other corporate applications application we would like consider a few things though.
+\begin{description}
+\item [{REQ-NFS1:}]~ The library should operate entirely in user space if possible this would prevent it from allowing privilege escalation attach entirely.  If not possible more scrutiny should be applied to those components security on a case by case basis.
+
+
+\end{description}
+
+%$<$Specify any requirements regarding security or privacy issues surrounding use 
+%of the product or protection of the data used or created by the product. Define 
+%any user identity authentication requirements. Refer to any external policies or 
+%regulations containing security issues that affect the product. Define any 
+%security or privacy certifications that must be satisfied.$>$
 
 \section{Software Quality Attributes}
-$<$Specify any additional quality characteristics for the product that will be 
-important to either the customers or the developers. Some to consider are: 
-adaptability, availability, correctness, flexibility, interoperability, 
-maintainability, portability, reliability, reusability, robustness, testability, 
+%$<$Specify any additional quality characteristics for the product that will be 
+%important to either the customers or the developers. Some to consider are: 
+%adaptability, availability, correctness, flexibility, interoperability, 
+%maintainability, portability, reliability, reusability, robustness, testability, 
 and usability. Write these to be specific, quantitative, and verifiable when 
 possible. At the least, clarify the relative preferences for various attributes, 
 such as ease of use over ease of learning.$>$
