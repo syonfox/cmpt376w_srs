@@ -286,52 +286,69 @@ It is assumed that the user's system is running of SFML version 2.2 or above. An
 \chapter{External Interface Requirements}
 
 \section{User Interfaces}
-The user interface will be the user's terminal. On succesfully running GET, a log message must include the name and the version of the software. We can distinguish between the following types of log messages:
-\begin{itemize}
-\item Information:
-\item Status:
-\item Warning:
-\item Error:
-\item Bug:
-\end{itemize}
-$<$Describe the logical characteristics of each interface between the software 
-product and the users. This may include sample screen images, any GUI standards 
-or product family style guides that are to be followed, screen layout 
-constraints, standard buttons and functions (e.g., help) that will appear on 
-every screen, keyboard shortcuts, error message display standards, and so on.  
-Define the software components for which a user interface is needed. Details of 
-the user interface design should be documented in a separate user interface 
-specification.$>$
 
-\section{Hardware Interfaces}
-joysticks?
-$<$Describe the logical and physical characteristics of each interface between 
-the software product and the hardware components of the system. This may include 
-the supported device types, the nature of the data and control interactions 
-between the software and the hardware, and communication protocols to be 
-used.$>$
+The user interface will be the user's terminal. GET will interact with the user interface through log messages. We can distinguish between the following types:
+\begin{itemize}
+\item Information: Used to display basic events. Ex: user running the software.
+\item Status: Used to display `significant' events that require a status code.
+\item Warning: User or system errors that do not cause failure of a component.
+\item Error: User or system errors that cause failure of a component.
+\end{itemize} 
+
+The following requirements must be respected when dealing with user interface's log message.
+\begin{description}
+\item [{REQ-UI1:}]~On succesfully running GET, a log message that includes the name and the version of the software must be printed out. 
+\end{description}
+\begin{description}
+\item [{REQ-UI2:}]~A log message must be printed out everytime an event occurs. 
+\end{description}
+\begin{description}
+\item [{REQ-UI3:}]~Each log out message must indicate its category.
+\item [{REQ-UI4:}]~All logs must be saved inside a log.txt file under the main folder.
+\end{description}
+%$<$Describe the logical characteristics of each interface between the software 
+%product and the users. This may include sample screen images, any GUI standards 
+%or product family style guides that are to be followed, screen layout 
+%constraints, standard buttons and functions (e.g., help) that will appear on 
+%every screen, keyboard shortcuts, error message display standards, and so on.  
+%Define the software components for which a user interface is needed. Details of %
+%the user interface design should be documented in a separate user interface 
+%specification.$>$
+
+%\section{Hardware Interfaces}
+%joysticks?
+%$<$Describe the logical and physical characteristics of each interface between 
+%the software product and the hardware components of the system. This may include 
+%the supported device types, the nature of the data and control interactions 
+%between the software and the hardware, and communication protocols to be 
+%used.$>$
 
 \section{Software Interfaces}
-Grapics Library
-$<$Describe the connections between this product and other specific software 
-components (name and version), including databases, operating systems, tools, 
-libraries, and integrated commercial components. Identify the data items or 
-messages coming into the system and going out and describe the purpose of each.  
-Describe the services needed and the nature of communications. Refer to 
-documents that describe detailed application programming interface protocols.  
-Identify data that will be shared across software components. If the data 
-sharing mechanism must be implemented in a specific way (for example, use of a 
-global data area in a multitasking operating system), specify this as an 
-implementation constraint.$>$
+As stated numerous times, this game engine is based on SFML. Therefore, the data must be stored in a way such that it can interact with SFML in the case were the users are only partial users.
+\begin{description}
+\item [{REQ-SI1:}]~Every class must implement an SFML class as a superclass.
+\item [{REQ-SI2:}]~Every SFML function must behave as intended on custom objects defined by our software.
+\item [{REQ-SI3:}]~Users are able to use SFML objects and GET objects interchangeably.
+\end{description}
+%$<$Describe the connections between this product and other specific software 
+%components (name and version), including databases, operating systems, tools, 
+%libraries, and integrated commercial components. Identify the data items or 
+%messages coming into the system and going out and describe the purpose of each.  
+%Describe the services needed and the nature of communications. Refer to 
+%documents that describe detailed application programming interface protocols.  
+%Identify data that will be shared across software components. If the data 
+%sharing mechanism must be implemented in a specific way (for example, use of a 
+%global data area in a multitasking operating system), specify this as an 
+%implementation constraint.$>$
 
-\section{Communications Interfaces}
-Networking multiplayer
-$<$Describe the requirements associated with any communications functions 
-required by this product, including e-mail, web browser, network server 
-communications protocols, electronic forms, and so on. Define any pertinent 
-message formatting. Identify any communication standards that will be used, such 
-as FTP or HTTP. Specify any communication security or encryption issues, data 
-transfer rates, and synchronization mechanisms.$>$
+%\section{Communications Interfaces}
+%Networking multiplayer
+%$<$Describe the requirements associated with any communications functions 
+%required by this product, including e-mail, web browser, network server 
+%communications protocols, electronic forms, and so on. Define any pertinent 
+%message formatting. Identify any communication standards that will be used, such 
+%as FTP or HTTP. Specify any communication security or encryption issues, data 
+%transfer rates, and synchronization mechanisms.$>$
 
 
 \chapter{System Features}
