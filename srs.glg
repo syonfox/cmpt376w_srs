@@ -1,7 +1,7 @@
 This is makeindex, version 2.15 [TeX Live 2019] (kpathsea + Thai support).
 Scanning style file ./srs.ist.............................done (29 attributes redefined, 0 ignored).
-Scanning input file srs.glo....done (5 entries accepted, 0 rejected).
-Sorting entries....done (11 comparisons).
-Generating output file srs.gls....done (10 lines written, 0 warnings).
+Scanning input file srs.glo....done (2 entries accepted, 0 rejected).
+Sorting entries....done (2 comparisons).
+Generating output file srs.gls....done (6 lines written, 0 warnings).
 Output written in srs.gls.
 Transcript written in srs.glg.

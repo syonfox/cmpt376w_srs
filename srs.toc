@@ -34,8 +34,8 @@
 \contentsline {chapter}{\numberline {5}Other Nonfunctional Requirements}{17}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Performance Requirements}{17}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Safety Requirements}{17}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Security Requirements}{17}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Software Quality Attributes}{17}{section.5.4}%
+\contentsline {section}{\numberline {5.3}Security Requirements}{18}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Software Quality Attributes}{18}{section.5.4}%
 \contentsline {section}{\numberline {5.5}Business Rules}{18}{section.5.5}%
 \contentsline {chapter}{\numberline {6}Other Requirements}{19}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Appendix A: Glossary}{19}{section.6.1}%
