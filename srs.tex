@@ -224,10 +224,7 @@ GET is organized into three modules. Each module provides a set of functions tha
 %or object class diagram, is often effective.$>$
 
 \section{User Classes and Characteristics}
-
-Full users - these users will use this software as their starting point and build there game around our components and tools.
-
-Partial users - These users will user the core graphics library as their starting point and may incorporate some components of our software into there project. 
+We can distinguish between two categories of users: full users and partial users. \\ \\ \textbf{Full users} will use this engine as their starting point and build there game around our components and tools. That means that they do not use GET to augment the functionalities provided by SFML but rather as a full fledged game engine.\\ \\Then, we have \textbf{partial users} who will SFML as their starting point and may incorporate some components of our software into there project.
 
 %$<$Identify the various user classes that you anticipate will use this product.  
 %User classes may be differentiated based on frequency of use, subset of product 
@@ -238,12 +235,12 @@ Partial users - These users will user the core graphics library as their startin
 %to satisfy.$>$
 
 \section{Operating Environment}
-
-Our Target environment for this project would be to extend SFML and we should expect the same environment that sfml does.
-
-OS: Linux, OSX, Windows\\
-Depandancys: SFML, OpenGL, Imgui\\
-Language Target: C++\\
+Since our software is dependent on SFML, we should expect a similar operating environment. As such, we have the following:
+\begin{itemize}
+\item Operating System: Windows(10, 8, 7, Vista, XP), Linux, macOS. x64 and x86 systems are both supported.
+\item Dependencies: SFML, OpenGL, Imgui
+\item Language Target: C++
+\end{itemize}
 
 %Maybe IMGUI
 
@@ -252,7 +249,7 @@ Language Target: C++\\
 %components or applications with which it must peacefully coexist.$>$
 
 \section{Design and Implementation Constraints}
-SFML does not support 3d inherently so it should be expected that the protect also does not  support 3d.
+This software is not intended to be used to develop 3D projects because SFML does not inherently support 3D. Therefore the software architecture should be designed in a way that makes it hard for users to develop 3D applications. Moreover, GET is not meant to be supported in any programming language other than C++ since partial users, as defined in the user classes, might use SFML as the backbone of their application and SFML is only supported in C++.
 
 %$<$Describe any items or issues that will limit the options available to the 
 %developers. These might include: corporate or regulatory policies; hardware 
@@ -264,18 +261,18 @@ SFML does not support 3d inherently so it should be expected that the protect al
 %software).$>$
 
 \section{User Documentation}
-API Reference
-\\
-Setup Guide
-\\
-Basic examples
-todo: expand on each of these maybe add more
+The following user documentation components will be delivered along with the software:
+\begin{itemize}
+\item README file: will be included in the repository from which GET will be downloaded. It will serve as a setup guide.
+\item Tutorials: will be available on the official website to get the user started with the product.
+\item API Reference: will elaborate on each module to provide users with the expected behaviour and the intended use of each component.
+\end{itemize}
 
 %$<$List the user documentation components (such as user manuals, on-line help, 
 %and tutorials) that will be delivered along with the software. Identify any 
 %known user documentation delivery formats or standards.$>$
 \section{Assumptions and Dependencies}
-
+It is assumed that the user's system is running of SFML version 2.2 or above. Any version below that is seriously outdated and might lead to unexpected behaviors.
 %$<$List any assumed factors (as opposed to known facts) that could affect the 
 %requirements stated in the SRS. These could include third-party or commercial 
 %components that you plan to use, issues around the development or operating 
@@ -330,11 +327,11 @@ transfer rates, and synchronization mechanisms.$>$
 
 
 \chapter{System Features}
-$<$This template illustrates organizing the functional requirements for the 
-product by system features, the major services provided by the product. You may 
-prefer to organize this section by use case, mode of operation, user class, 
-object class, functional hierarchy, or combinations of these, whatever makes the 
-most logical sense for your product.$>$
+%$<$This template illustrates organizing the functional requirements for the 
+%product by system features, the major services provided by the product. You may 
+%prefer to organize this section by use case, mode of operation, user class, 
+%object class, functional hierarchy, or combinations of these, whatever makes the 
+%most logical sense for your product.$>$
 
 %\section{System Feature 1}
 %$<$Don’t really say “System Feature 1.” State the feature name in just a few 
