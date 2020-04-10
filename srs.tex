@@ -85,7 +85,7 @@
 \chapter{Introduction}
 
 \section{Purpose}
-This 2d game engine is designed to bridge a gap between existing \gls{gl} and large complete 3d game engines.  It will extend the capabilities of \gls{gl} and provide common systems and feature needed to develop a game without forcing the user into a large complex engine.
+This document refers to the GET software, version 1.0. GET stands for Game Engine Toolbox and it is a two-dimensional (2D) game engine designed to bridge a gap between existing \gls{gl} and large complete three-dimensional (3D) game engines.  It will extend the capabilities of \gls{gl} and provide common systems and feature needed to develop a game without forcing the user into a large complex engine. In its first iteration (version 1.0), GET is based on the C++ Simple and Fast Multimedia Library (SFML) engine. This SRS will cover the entirety of GET
 
 %$<$Identify the product whose software requirements are specified in this 
 %document, including the revision or release number. Describe the scope of the 
@@ -104,8 +104,7 @@ This document follows the IEEE SRS template.  It also makes use of the KISS ment
 
 \section{Intended Audience and Reading Suggestions}
 
-This document is intended for the developers who will be implementing the game engine.  We would also like to consider users of the engine as this document may offer a high level overview of what the product offers and its design philosophy.
-
+This document is intended for the developers who will be implementing the game engine.  We would also like to consider users of the engine as this document may offer a high level overview of what the product offers and its design philosophy. We recommend that developers start by reading chapter 2 (Overall Description), especially section 2.2 (Product Functions) as they will be in charge of implementing the components mentioned there. Then, they can move on to chapter 4 which elaborates the system features of each module of the software.
 %$<$Describe the different types of reader that the document is intended for, 
 %such as developers, project managers, marketing staff, users, testers, and 
 %documentation writers. Describe what the rest of this SRS contains and how it is 
@@ -115,7 +114,7 @@ This document is intended for the developers who will be implementing the game e
 
 \section{Project Scope}
 
-This project is meant to complement an existing graphics library providing the core functionalists all games require and tools for developers to use.  It is meant to provide a more advanced and highly customization starting point for game developers who want to have full control over there game.  It is also meant to be modulate so that developers are not forced into using our designs and have the freedom to incorporate as many or as few of the features we provide.
+This project is meant to complement an existing graphics library providing the core functionalists all games require and tools for developers to use.  It is meant to provide a more advanced and highly customization starting point for game developers who want to have full control over there game.  It is also meant to be modular so that developers are not forced into using our designs and have the freedom to incorporate as many or as few of the features we provide. The current iteration of GET focuses on SFML which is a C++ multimedia library. It is used as the backbone of the software and the aim is to cover more libraries in the next versions.
 
 %$<$Provide a short description of the software being specified and its purpose, 
 %including relevant benefits, objectives, and goals. Relate the software to 
@@ -144,16 +143,17 @@ including title, author, version number, date, and source or location.$>$
 
 \section{Product Perspective}
 
+The product being specified in this SRS is completely new. It is self-contained in the sense that it does not have any dependencies that require additional steps to be taken by its user, even though it relies on the SFML library.
 
 
-$<$Describe the context and origin of the product being specified in this SRS.  
-For example, state whether this product is a follow-on member of a product 
-family, a replacement for certain existing systems, or a new, self-contained 
-product. If the SRS defines a component of a larger system, relate the 
-requirements of the larger system to the functionality of this software and 
-identify interfaces between the two. A simple diagram that shows the major 
-components of the overall system, subsystem interconnections, and external 
-interfaces can be helpful.$>$
+%$<$Describe the context and origin of the product being specified in this SRS.  
+%For example, state whether this product is a follow-on member of a product 
+%family, a replacement for certain existing systems, or a new, self-contained 
+%product. If the SRS defines a component of a larger system, relate the 
+%requirements of the larger system to the functionality of this software and 
+%identify interfaces between the two. A simple diagram that shows the major 
+%components of the overall system, subsystem interconnections, and external 
+%interfaces can be helpful.$>$
 
 \section{Product Functions}
 
@@ -187,12 +187,12 @@ Util - extra utility functions that extend GL or offer useful functions
 	Add Extra bodys and objects such as partical systems
 
 	
-$<$Summarize the major functions the product must perform or must let the user 
-perform. Details will be provided in Section 3, so only a high level summary 
-(such as a bullet list) is needed here. Organize the functions to make them 
-understandable to any reader of the SRS. A picture of the major groups of 
-related requirements and how they relate, such as a top level data flow diagram 
-or object class diagram, is often effective.$>$
+%$<$Summarize the major functions the product must perform or must let the user 
+%perform. Details will be provided in Section 3, so only a high level summary 
+%(such as a bullet list) is needed here. Organize the functions to make them 
+%understandable to any reader of the SRS. A picture of the major groups of 
+%related requirements and how they relate, such as a top level data flow diagram 
+%or object class diagram, is often effective.$>$
 
 \section{User Classes and Characteristics}
 
@@ -354,9 +354,6 @@ This feature proves the core game loop and state functionality it is an essentia
 	
 \item Stimulus:		Camera Set\\
 	Response: 		Current states Camera is set and the cameras transformation from world coordinates to Camera coordinates is applied while rendering \\
-	
-\item Stimulus:		\\
-	Response: 		\\
 
 \end{itemize}
 
@@ -366,14 +363,14 @@ This feature proves the core game loop and state functionality it is an essentia
 \subsection{Functional Requirements}
 
 \begin{description}
-\item [{REC-ET1:}]~Tick rate and Frame rate must be controlled independently
-\item [{REC-ET2:}]~When calling Update in a tick the Tick time must be sent as a parameter
-\item [{REC-ET3:}]~If ticks cannot be computed in time render frames may be dropped.
-\item [{REC-ES1:}]~The update and render function should be called for all active states.
-\item [{REC-ES2:}]~States should be able toggle states from within the update function.
-\item [{REC-ES3:}]~States Should have an Identifier, Update function, and Draw function
-\item [{REC-ES4:}]~States should accept a camera transformation which applies to the render function.
-\item [{REC-ES5:}]~States should be able to be given indexes for rendering order.  This should default to the order they were added
+\item [{REQ-ET1:}]~Tick rate and Frame rate must be controlled independently
+\item [{REQ-ET2:}]~When calling Update in a tick the Tick time must be sent as a parameter
+\item [{REQ-ET3:}]~If ticks cannot be computed in time render frames may be dropped.
+\item [{REQ-ES1:}]~The update and render function should be called for all active states.
+\item [{REQ-ES2:}]~States should be able toggle states from within the update function.
+\item [{REQ-ES3:}]~States Should have an Identifier, Update function, and Draw function
+\item [{REQ-ES4:}]~States should accept a camera transformation which applies to the render function.
+\item [{REQ-ES5:}]~States should be able to be given indexes for rendering order.  This should default to the order they were added
 
 \end{description}
 
@@ -434,24 +431,24 @@ Response: 		All relationships are removed and corresponding managers and bodies 
 
 
 \begin{description}
-\item [{REC-PB1:}]~The Physics Body class should store all physical properties required by the Functions this includes: Shape, Position, Velocity, Acceleration, Rotation,Rotational Velocity, Friction, Elasticity, Shape
-\item [{REC-PB2:}]~The Physics Body class should have an \textit{Update} function which updates the bodies property according to classical mechanics when called,  this function will take in a delta time parameter 
-\item [{REC-PB3:}]~The Physics Body class should have an \textit{Render} function which Draws the bodies shape.  This should be designed to be overridden by users.
-\item [{REC-PB4:}]~The Physics Body class should keep an list of relationships it is a part of so that is can apply them all when updated.
+\item [{REQ-PB1:}]~The Physics Body class should store all physical properties required by the Functions this includes: Shape, Position, Velocity, Acceleration, Rotation,Rotational Velocity, Friction, Elasticity, Shape
+\item [{REQ-PB2:}]~The Physics Body class should have an \textit{Update} function which updates the bodies property according to classical mechanics when called,  this function will take in a delta time parameter 
+\item [{REQ-PB3:}]~The Physics Body class should have an \textit{Render} function which Draws the bodies shape.  This should be designed to be overridden by users.
+\item [{REQ-PB4:}]~The Physics Body class should keep an list of relationships it is a part of so that is can apply them all when updated.
 
-\item [{REC-PF1:}]~The Physics Function should accept universals constants as parameters or allow global defaults be set.
-\item [{REC-PF2:}]~The Physics Function should include \textit{Collision detection} between two bodies with \textit{Minimum Translation Vectors} (MTV).  It should include fast approximate bounding box collision detection as well.
-\item [{REC-PF3:}]~The Physics Function should include \textit{collision solving} functions which will apply the necessary forces to handle a collision between two bodies.
-\item [{REC-PF4:}]~The Physics Function should include \textit{gravity} functions to apply gravity between two bodies.
-\item [{REC-PF5:}]~The Physics Function should include \textit{constant force} functions to apply constant forces to a body these could be used to create world gravity or wind forces.
+\item [{REQ-PF1:}]~The Physics Function should accept universals constants as parameters or allow global defaults be set.
+\item [{REQ-PF2:}]~The Physics Function should include \textit{Collision detection} between two bodies with \textit{Minimum Translation Vectors} (MTV).  It should include fast approximate bounding box collision detection as well.
+\item [{REQ-PF3:}]~The Physics Function should include \textit{collision solving} functions which will apply the necessary forces to handle a collision between two bodies.
+\item [{REQ-PF4:}]~The Physics Function should include \textit{gravity} functions to apply gravity between two bodies.
+\item [{REQ-PF5:}]~The Physics Function should include \textit{constant force} functions to apply constant forces to a body these could be used to create world gravity or wind forces.
 
-\item [{REC-PM1:}]~The Physics Manager should create an environment to hold Body' s as well as set world constants for the bodies it manages.
-\item [{REC-PM2:}]~The Physics Manager should allow relationships to be made between bodies which define additional iterations.  This includes forces and whether or not bodies should interact with each other.
-\item [{REC-PM3:}]~The Physics Manager should have an \textit{Update} function which applies all relations and updates all bodies
-\item [{REC-PM4:}]~The Physics Manager should have an \textit{Render} function which renders all bodies.  This should allow for bodies to be drawn in a defined order
-\item [{REC-PM5:}]~The Physics Manager should allow bodies to be grouped and relations or physics functions can be defined for the whole group or for each par of bodies in the group.
-\item [{REC-PM6:}]~The Physics Manager should allow world Relationships to be set which apply to all bodies.  These include global forces and n-body gravity as well as other optional relationships as appropriate.
-\item [{REC-PM7:}]~The Physics Manager should allow preform collision detection between select objects  this should be efficiently implemented so that full collision detection is only used when necessary not at all times.
+\item [{REQ-PM1:}]~The Physics Manager should create an environment to hold Body' s as well as set world constants for the bodies it manages.
+\item [{REQ-PM2:}]~The Physics Manager should allow relationships to be made between bodies which define additional iterations.  This includes forces and whether or not bodies should interact with each other.
+\item [{REQ-PM3:}]~The Physics Manager should have an \textit{Update} function which applies all relations and updates all bodies
+\item [{REQ-PM4:}]~The Physics Manager should have an \textit{Render} function which renders all bodies.  This should allow for bodies to be drawn in a defined order
+\item [{REQ-PM5:}]~The Physics Manager should allow bodies to be grouped and relations or physics functions can be defined for the whole group or for each par of bodies in the group.
+\item [{REQ-PM6:}]~The Physics Manager should allow world Relationships to be set which apply to all bodies.  These include global forces and n-body gravity as well as other optional relationships as appropriate.
+\item [{REQ-PM7:}]~The Physics Manager should allow preform collision detection between select objects  this should be efficiently implemented so that full collision detection is only used when necessary not at all times.
 \end{description}
 
 
