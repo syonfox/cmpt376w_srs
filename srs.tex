@@ -143,7 +143,7 @@ including title, author, version number, date, and source or location.$>$
 
 \section{Product Perspective}
 
-The product being specified in this SRS is completely new. It is self-contained in the sense that it does not have any dependencies that require additional steps to be taken by its user, even though it relies on the SFML library.
+The product being specified in this SRS is completely new. It advertises itself as a game engine that comes handy when using the SFML library for the reason that it augments the functionalities of that library. It originates from the need to develop games faster without compromising on stability and security. It is self-contained in the sense that it does not have any dependencies that require additional steps to be taken by its user, even though it relies on the SFML library. However, since it comes as an addon to the aforementioned library, GET can only run on an SFML dependent application.
 
 
 %$<$Describe the context and origin of the product being specified in this SRS.  
@@ -156,35 +156,64 @@ The product being specified in this SRS is completely new. It is self-contained 
 %interfaces can be helpful.$>$
 
 \section{Product Functions}
+GET is organized into three modules. Each module provides a set of functions that are enumerated below:
 
-Engine
-
-	Timing - Setups at maintian a core game loop
-		Allows users to use real dt or fix it so each tick is a consistent time.
-		Allows users to set tickrate and framerate independently
-		Allows users to hook into update and render calls
-		
-		
-	States - Manage switching between game states
-		Allow users to Bind a number of game states to an engine each with its own update and render functions
-		Allow users to toggle states.
-	
-	Assets - Manages the loading and management of game assets such as fonts and textures.  
-		Supports Fonts
-		Supports Sprites
-		Supports Textures
-		Supports Animations
-	
+\begin{enumerate}
+\item Engine Module
+\begin{itemize}
+	\item Timing - Setups at maintian a core game loop
+	\begin{itemize}
+		\item Allows users to choose between using real deltaTime or a fixed tick time so that each tick is a consistent time
+		\item Allows users to set tickrate and framerate independently
+		\item Allows users to hook into update and render calls
+	\end{itemize}
+	\item States - Manages switching between game states
+	\begin{itemize}
+		\item Allows users to bind a number of game states to an engine, each with its own update and render functions
+		\item Allows users to toggle states
+	\end{itemize}
+	\item Assets - Manages the loading and management of game assets such as fonts and textures.
+	\begin{itemize}  
+		\item Supports Fonts
+		\item Supports Sprites
+		\item Supports Textures
+		\item Supports Animations
+		\item Supports Sound files
+	\end{itemize}
+\end{itemize}
 %	Physics  (Optional) - Incorporates Physics Module Into update
 %	Camera (Optional) - Incorporates Camera Module and camera control function into engine
 %		ie setting camera to fallow a Body in the engine.
-	
-Physics Module - This will provide Management and Physics functions that apply to bodys.
-Camera - This will provide cameras that can be applied to A game state. or accessed as a transformation.
-UI - Adds the ability to make and control UI's 
-Util - extra utility functions that extend GL or offer useful functions
-	Extend Math for GL's vectors.
-	Add Extra bodys and objects such as partical systems
+
+\item Physics Module 
+\begin{itemize}
+	\item Body - Links the physics module to a shape in order to apply constraints to it through the manager or functions
+	\item Manager - Used to hold bodies and can be linked to a background of the UI module
+	\item Functions - A set of functions that can be applied onto bodies or the managers
+\end{itemize}	
+%Camera - This will provide cameras that can be applied to A game state. or accessed as a transformation.
+\item User Interface
+\begin{itemize}
+	\item Shapes - Create complex shapes
+	\begin{itemize}
+		\item Allows users to generate a shape using a sprite file loaded as an asset
+		\item Allows users to generate humanoid shape based on a set of parameters
+		\item Allows users to link shapes to a body
+	\end{itemize}
+	\item Background - Link a set of shapes together to form an object on top of which complex shapes can be displayed
+	\begin{itemize}	
+		\item Offers a set of parameters to initialize a background
+		\item Allows users to initialize the background object with non-complex shapes as a parameter
+		\item Allows users to link the background to an instance of Manager class from the physics module
+		\item Allows users to add music to the background 
+	\end{itemize}
+\end{itemize}
+\end{enumerate}	
+
+
+%Util - extra utility functions that extend GL or offer useful functions
+%	Extend Math for GL's vectors.
+%	Add Extra bodys and objects such as partical systems
 
 	
 %$<$Summarize the major functions the product must perform or must let the user 
