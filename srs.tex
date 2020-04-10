@@ -530,7 +530,18 @@ Response: 		Background is link to an instance of Physics Manager and all its pro
 \end{itemize}
 \subsection{Functional Requirements}
 
+\begin{description}
+\item [{REQ-SH1:}]~The Humanoid and Miscelleaneous shapes are customs shapes that inherit all the attributes of an SFML shape.
+\item [{REQ-SH2:}]~The Humanoid shape is a custom class that adds the following attributes on top of the abstract class sf::Shape: head size, body size, body weight, height, weight, feet size, body color, hair color, hair type, eyes color, humanoid type.
+\item [{REQ-SH3:}]~The Miscellaneous shape is a custom class that uses convex shape to draw a loaded sprite that has been passed as a parameter.
+\item [{REQ-SH4:}]~The customs shapes can be linked to a body object and their behaviour will be controlled by the physics module through method Override.
+\item [{REQ-BA1:}]~A background is a set of sf::Shape that are linked together in a single custom object defined by a class
+\item [{REQ-BA2:}]~The background class constructor allows the user to pass the following parameters: color, shapes, main shape, physics manager, sound
+\item [{REQ-BA3:}]~The background class' main shape will be on the first layer and thus be at the bottom of the superposition stack
+\item [{REQ-BA4:}]~The background class' shapes are superposed in the order that they have been instantiated
+\item [{REQ-BA5:}]~The background class' variables cannot be altered after having been instantied. The user must create a new object.
 
+\end{description}
 \chapter{Other Nonfunctional Requirements}
 
 \section{Performance Requirements}
